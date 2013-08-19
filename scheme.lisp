@@ -18,8 +18,7 @@
 	  (rec (rest names)
 	       (append `((setf (symbol-function ',name)
 			       (lambda (&rest args)
-				 (apply (symbol-value ',name) args)))
-			 (defvar ,name))
+				 (apply (symbol-value ',name) args))))
 		       forms)))
 	(cons 'progn (reverse forms)))))
 
