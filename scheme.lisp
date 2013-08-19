@@ -11,6 +11,8 @@
      (,name ,@(mapcar #'second binds))))
 
 (defmacro lisp1ify (&rest names)
+  "Make each name a function that calls the value of the variable with
+the same name."
   (let@ rec ((names names)
 	     (forms))
     (if names
@@ -23,6 +25,8 @@
 	(cons 'progn (reverse forms)))))
 
 (defmacro with-lisp1 (names &body body)
+  "Make each name a function that calls the value of the variable with
+the same name within BODY."
   `(labels (,@(mapcar (lambda (name-spec)
 			`(,name-spec (&rest rest) (apply ,name-spec rest)))
                       names))
