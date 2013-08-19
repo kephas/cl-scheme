@@ -5,5 +5,5 @@
 
 (defpackage :nothos.net/2013.08.scheme
   (:use :cl)
-  (:export #:let@ #:lisp1ify #:with-lisp1)
+  (:export #:let@ #:lisp1ify #:with-lisp1 #:add-nickname)
   (:nicknames :scheme))

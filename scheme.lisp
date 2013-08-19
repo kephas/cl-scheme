@@ -31,3 +31,8 @@ the same name within BODY."
 			`(,name-spec (&rest rest) (apply ,name-spec rest)))
                       names))
      ,@body))
+
+(defmacro add-nickname (package nickname)
+  "Add a nickname to a package, with effect similar to R6RS' prefix."
+  `(eval-when (:compile-toplevel :load-toplevel :execute)
+     (rename-package ,package (package-name ,package) (cons ,nickname (package-nicknames ,package)))))
