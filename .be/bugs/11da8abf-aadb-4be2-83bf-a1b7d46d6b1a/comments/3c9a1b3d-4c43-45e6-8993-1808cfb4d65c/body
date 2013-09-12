@@ -1,0 +1,4 @@
+Warning: a LOOP or TAGBODY-based implementation should still provide a
+true function in the lexical environment of the macro's body, in case
+the code using it might want to pass the let@-defined function to
+higher-order function.

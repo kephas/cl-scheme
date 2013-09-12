@@ -1,0 +1,2 @@
+The current version of let@ is straightforward, but won't work when
+the Lisp implementation doesn't provide TCO.
